@@ -1,0 +1,19 @@
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+
+dist/
+./dist
+node_modules/
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
