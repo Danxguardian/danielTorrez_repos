@@ -1,0 +1,21 @@
+.poke-card-img {
+	height: 150px;
+	width: 150px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media only screen and (max-width: 768px) {
+	.poke-card {
+		margin: 8px 4px;
+		padding: 4px;
+	}
+}
+
+@media only screen and (min-width: 769px) {
+	.poke-card {
+		margin: 2em 4em;
+		padding: 16px;
+	}
+}

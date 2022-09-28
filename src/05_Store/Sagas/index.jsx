@@ -1,7 +1,7 @@
 /* FILE TO MERGE ALL SAGAS ON ONE ROOT */
 import { fork } from "redux-saga/effects";
-import informationSagas from "./SInformation";
+import mainSagas from "./SMain";
 
 export default function* rootSaga() {
-	yield fork(informationSagas);
+	yield fork(mainSagas);
 }

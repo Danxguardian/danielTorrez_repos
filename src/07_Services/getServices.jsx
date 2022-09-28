@@ -1,5 +1,4 @@
 import axios from "axios";
-import "./interceptors";
 
 const getService = (server, root, path, config) => {
 	const srv = server || "";
@@ -17,6 +16,8 @@ const getService = (server, root, path, config) => {
 				}
 			})
 			.catch((error) => {
+				if (error.response.status == "404")
+					alert("No se encontro información");
 				rejects(error);
 			});
 	});
