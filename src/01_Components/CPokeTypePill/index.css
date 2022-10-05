@@ -1,0 +1,26 @@
+.pkmnType {
+	border-radius: 10px;
+	width: 120px;
+	border: 1px solid white;
+	height: 32px;
+	color: white;
+	margin: 0 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+	.pkmnType {
+		border-radius: 10px;
+
+		width: 65px;
+		border: 1px solid white;
+		height: 24px;
+		color: white;
+		margin: 0 4px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}

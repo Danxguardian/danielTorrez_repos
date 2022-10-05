@@ -1,9 +1,11 @@
 .poke-card-detail-img {
+	z-index: 1;
 	height: 250px;
 	width: 250px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	filter: drop-shadow(10px -3px 6px #222);
 }
 
 .poke-sprite {
@@ -12,16 +14,20 @@
 	background: #ebebeb50;
 }
 
+.poke-card-detail {
+	border-radius: 1em;
+}
+
 @media only screen and (max-width: 768px) {
 	.poke-card-detail {
-		margin: 8px 4px;
+		margin: 8px 0px;
 		padding: 16px;
 	}
 }
 
 @media only screen and (min-width: 769px) {
 	.poke-card-detail {
-		margin: 2em 1em;
+		margin: 2em 0em;
 		padding: 16px;
 	}
 }

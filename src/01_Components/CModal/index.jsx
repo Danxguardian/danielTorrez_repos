@@ -5,8 +5,15 @@ import * as actionsModal from "../../05_Store/Actions/AModal";
 
 import "./index.css";
 //type 1=info 2=accept
-export const CModal = ({ type, title, message, btnAccept, btnCancel }) => {
-	console.log(type);
+export const CModal = ({
+	type,
+	title,
+	message,
+	btnAccept,
+	btnCancel,
+	btnAcceptFunc,
+	btnCancelFunc,
+}) => {
 	const dispatch = useDispatch();
 	return (
 		<div
@@ -20,11 +27,16 @@ export const CModal = ({ type, title, message, btnAccept, btnCancel }) => {
 		>
 			<div className="modal-dialog modal-dialog-centered">
 				<div className="modal-content">
-					<div className="modal-header">
-						<h5 className="modal-title" id="staticBackdropLabel">
-							{title}
-						</h5>
-					</div>
+					{title && (
+						<div className="modal-header">
+							<h5
+								className="modal-title"
+								id="staticBackdropLabel"
+							>
+								{title}
+							</h5>
+						</div>
+					)}
 					<div className="modal-body">{message}</div>
 					<div className="modal-footer">
 						{type != 1 && (
@@ -33,6 +45,7 @@ export const CModal = ({ type, title, message, btnAccept, btnCancel }) => {
 								className="btn btn-secondary"
 								data-bs-dismiss="modal"
 								onClick={() => {
+									btnCancelFunc();
 									dispatch(actionsModal.hideModal());
 								}}
 							>
@@ -43,7 +56,8 @@ export const CModal = ({ type, title, message, btnAccept, btnCancel }) => {
 							type="button"
 							className="btn btn-primary"
 							onClick={() => {
-								dispatch(actionsModal.acceptModal());
+								btnAcceptFunc();
+								dispatch(actionsModal.hideModal());
 							}}
 						>
 							{btnAccept}

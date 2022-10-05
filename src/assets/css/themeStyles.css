@@ -1,5 +1,21 @@
 /* THEME STYLES ONLY */
+body {
+	background: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			from(#7beb74),
+			to(#431246)
+		)
+		fixed;
+}
 
-.testBorder {
-    border: 2px dotted rgb(225, 0, 255);
+.action-btn {
+	background: #f23b2f;
+	color: white;
+	border: none;
+	width: 128px;
+	height: 48px;
+	font-size: larger;
+	border-radius: 5px;
 }

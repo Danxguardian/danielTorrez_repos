@@ -1,7 +1,7 @@
 import * as Types from "../Actions/actionTypes";
 import MESSAGES from "../../06_Utils/i18n";
 const INIT_STATE = {
-	status: false,
+	isShow: false,
 	default: {
 		type: 1,
 		title: MESSAGES["MODAL_TITLE_DEFAULT"],
@@ -14,39 +14,33 @@ const INIT_STATE = {
 const modalReducer = (state = INIT_STATE, action) => {
 	switch (action.type) {
 		case Types.SHOW_MODAL: {
+			const {
+				type,
+				title,
+				message,
+				accept,
+				cancel,
+				btnAcceptFunc,
+				btnCancelFunc,
+			} = action.payload;
+
 			return {
 				...state,
-				type: action.payload.type
-					? action.payload.type
-					: state.default.type,
-				status: action.payload.status,
-				title: action.payload.title
-					? action.payload.title
-					: state.default.title,
-				message: action.payload.message
-					? action.payload.message
-					: state.default.message,
-				accept: action.payload.accept
-					? action.payload.accept
-					: state.default.accept,
-				cancel: action.payload.cancel
-					? action.payload.cancel
-					: state.default.cancel,
+				type: type || state.default.type,
+				title: title,
+				message: message,
+				accept: accept || state.default.accept,
+				cancel: cancel || state.default.cancel,
+				btnAcceptFunc: btnAcceptFunc || (() => {}),
+				btnCancelFunc: btnCancelFunc || (() => {}),
+				isShow: true,
 			};
 		}
 
 		case Types.HIDE_MODAL: {
 			return {
 				...state,
-				status: false,
-			};
-		}
-
-		case Types.ACCEPT_MODAL: {
-			return {
-				...state,
-				status: false,
-				answer: true,
+				isShow: false,
 			};
 		}
 

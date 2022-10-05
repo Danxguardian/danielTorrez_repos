@@ -5,7 +5,7 @@ import capitalizeFirstLetter from "../../06_Utils/utils";
 import "./index.css";
 
 export const CPokeCardDetail = ({ pokemon }) => {
-	const { id, name = "", types, weight, moves, sprites } = pokemon;
+	const { id, name, types, weight, moves, sprites } = pokemon;
 
 	let typesPkmn = ["normal"];
 	let movesPkmn = [];
@@ -27,6 +27,7 @@ export const CPokeCardDetail = ({ pokemon }) => {
 				className="poke-card-detail-img"
 				src={imagePokemon.replace("{id}", id)}
 			/>
+
 			<h4>{`#${id}`}</h4>
 			<h2>{capitalizeFirstLetter(name)}</h2>
 			<h3 className="left-text">Types</h3>

@@ -3,12 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { CLoader } from "./01_Components/CLoader/index";
 import { CModal } from "./01_Components/CModal";
 
-import * as modalActions from "./05_Store/Actions/AModal";
 import PMain from "./02_Pages/PMain/index";
 import CMain from "./03_Controllers/CMain";
 import { getPokeRequest } from "./05_Store/Actions/AMain";
 
-console.log("env", process.env);
+/* console.log("env", process.env); */
 
 export const App = () => {
 	const dispatch = useDispatch();
@@ -24,13 +23,15 @@ export const App = () => {
 				<CMain RenderComponent={PMain} />
 			</div>
 
-			{modal.status && (
+			{modal.isShow && (
 				<CModal
 					type={modal.type}
 					title={modal.title}
 					message={modal.message}
 					btnAccept={modal.accept}
 					btnCancel={modal.cancel}
+					btnAcceptFunc={modal.btnAcceptFunc}
+					btnCancelFunc={modal.btnCancelFunc}
 				/>
 			)}
 			{loading.status && <CLoader title={loading.title} />}

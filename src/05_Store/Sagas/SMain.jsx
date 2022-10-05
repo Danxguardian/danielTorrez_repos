@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from "@redux-saga/core/effects";
-import ENDPOINTS from "../../04_Constans/endpoints";
+
 import { getService } from "../../07_Services/getServices";
 import {
 	getPokeSuccess,
@@ -9,6 +9,7 @@ import {
 } from "../Actions/AMain";
 import * as actionTypes from "../Actions/actionTypes";
 import { hideLoader, showLoader } from "../Actions/ALoader";
+import { ENDPOINTS } from "../../04_Constans/endpoints";
 
 export function* getPokeRequest({ payload }) {
 	const { url } = payload || null;

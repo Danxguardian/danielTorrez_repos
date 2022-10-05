@@ -6,15 +6,14 @@ export const CSearch = ({ onSearch }) => {
 	const [value, setValue] = useState("");
 
 	const onHandler = (e) => {
-		if (e.code === "Enter" && value.length > 0) onSearch(value);
-		else setValue(e.target.value);
+		if (e.which == 13) onSearch(value);
 	};
 
 	return (
 		<input
 			className="nosubmit"
-			onChange={(e) => onHandler(e)}
-			onKeyUp={(e) => onHandler(e)}
+			onChange={(e) => setValue(e.target.value)}
+			onKeyDown={(e) => onHandler(e)}
 			value={value}
 			type="search"
 			placeholder="Buscar"

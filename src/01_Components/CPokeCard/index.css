@@ -4,11 +4,16 @@
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	filter: drop-shadow(10px -3px 6px #222);
+}
+
+.poke-card {
+	border-radius: 1em;
 }
 
 @media only screen and (max-width: 768px) {
 	.poke-card {
-		margin: 8px 4px;
+		margin: 8px 0px;
 		padding: 4px;
 	}
 }
@@ -19,3 +24,5 @@
 		padding: 16px;
 	}
 }
+
+
